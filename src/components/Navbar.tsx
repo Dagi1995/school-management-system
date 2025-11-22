@@ -29,30 +29,14 @@ const Navbar = () => {
           />
         </div>
       </div>
-
       {/* ICONS AND USER */}
-      <div className="flex items-center gap-4">
-        <Button size="icon" variant="outline" className="rounded-full h-8 w-8">
-          <Image src="/message.png" alt="messages" width={18} height={18} />
-        </Button>
-
-        <div className="relative">
-          <Button
-            size="icon"
-            variant="outline"
-            className="rounded-full h-8 w-8"
-          >
-            <Image
-              src="/announcement.png"
-              alt="notifications"
-              width={18}
-              height={18}
-            />
-          </Button>
-          <Badge
-            className="absolute -top-2 -right-2 rounded-full px-1 text-[10px]"
-            variant="destructive"
-          >
+      <div className="flex items-center gap-6 justify-end w-full">
+        <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
+          <Image src="/message.png" alt="" width={20} height={20} />
+        </div>
+        <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative">
+          <Image src="/announcement.png" alt="" width={20} height={20} />
+          <div className="absolute -top-3 -right-3 w-5 h-5 flex items-center justify-center bg-purple-500 text-white rounded-full text-xs">
             1
           </Badge>
         </div>
