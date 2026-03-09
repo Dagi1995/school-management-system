@@ -10,12 +10,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-const SingleTeacherPage = async ({
-  params: { id },
-}: {
-  params: { id: string };
-}) => {
-  const { sessionClaims } = auth();
+const SingleTeacherPage = async (
+  props: { params: Promise<{ id: string }> }
+) => {
+  const { id } = await props.params;
+  const { sessionClaims } = await auth();
   const role = (sessionClaims?.metadata as { role?: string })?.role;
 
   const teacher:

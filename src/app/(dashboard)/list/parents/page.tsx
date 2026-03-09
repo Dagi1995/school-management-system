@@ -11,13 +11,14 @@ import { auth } from "@clerk/nextjs/server";
 
 type ParentList = Parent & { students: Student[] };
 
-const ParentListPage = async ({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | undefined };
-}) => {
+const ParentListPage = async (
+  props: {
+    searchParams: Promise<{ [key: string]: string | undefined }>;
+  }
+) => {
+  const searchParams = await props.searchParams;
 
-const { sessionClaims } = auth();
+const { sessionClaims } = await auth();
 const role = (sessionClaims?.metadata as { role?: string })?.role;
 
 
