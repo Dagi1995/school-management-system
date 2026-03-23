@@ -36,28 +36,7 @@ export default function SignInPage() {
               name="start"
               className="space-y-6 rounded-2xl bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100"
             >
-              <div className="grid grid-cols-2 gap-4">
-                <Clerk.Connection
-                  name="google"
-                  className="flex items-center justify-center gap-3 rounded-xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-                >
-                  <Clerk.Icon className="h-5 w-5" />
-                  Google
-                </Clerk.Connection>
-                <Clerk.Connection
-                  name="github"
-                  className="flex items-center justify-center gap-3 rounded-xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-                >
-                  <Clerk.Icon className="h-5 w-5" />
-                  GitHub
-                </Clerk.Connection>
-              </div>
-
-              <div className="relative flex items-center">
-                <div className="flex-grow border-t border-slate-200"></div>
-                <span className="mx-4 flex-shrink-0 text-xs text-slate-400 uppercase tracking-wider">Or continue with email</span>
-                <div className="flex-grow border-t border-slate-200"></div>
-              </div>
+              <Clerk.GlobalError className="text-sm text-red-500" />
 
               <div className="space-y-4">
                 <Clerk.Field name="identifier" className="space-y-2">
